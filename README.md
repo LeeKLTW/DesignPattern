@@ -4,6 +4,7 @@
 - [ ] Abstract Factory pattern
 - [ ] Factory* pattern
 - [ ] Builder pattern
+- [ ] Singleton pattern
 
 
 # Structural patterns
@@ -11,22 +12,21 @@
 - [x] Decorator pattern
 - [ ] Bridge pattern
 - [ ] Facade    pattern
+- [ ] Flyweight pattern
+- [ ] Composite pattern
 
 
 # Behavior patterns
+- [x] Iterator  pattern, Generator  pattern
 - [ ] The chain of Responsibility pattern
 - [ ] Command   pattern
 - [ ] [Observer  pattern](#observer-pattern)
 - [ ] State     pattern
+- [ ] Template  pattern
+- [ ] Strategy  pattern
 
 
 # Other
-- [x] Iterator  pattern, Generator  pattern
-- [ ] Strategy  pattern
-- [ ] Singleton pattern
-- [ ] Template  pattern
-- [ ] Flyweight pattern
-- [ ] Composite pattern
 
 
 --------
