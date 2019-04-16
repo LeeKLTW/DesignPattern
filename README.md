@@ -1,20 +1,29 @@
 (Creational, structural or behavioral)
 
-
-- [x] Iterator  pattern, Generator  pattern
-- [ ] Decorator pattern
-- [ ] Observer  pattern
-- [ ] Strategy  pattern
-- [ ] State     pattern
-- [ ] Singleton pattern
-- [ ] Template  pattern
-- [ ] Adapter   pattern
-- [ ] Facade    pattern
-- [ ] Flyweight pattern
-- [ ] Command   pattern
+# Creational patterns
 - [ ] Abstract Factory pattern
 - [ ] Factory* pattern
-- [ ] Composite pattern
 - [ ] Builder pattern
+
+
+# Structural patterns
+- [ ] Adapter   pattern
+- [ ] Decorator pattern
 - [ ] Bridge pattern
+- [ ] Facade    pattern
+
+
+# Behavior patterns
 - [ ] The chain of Responsibility pattern
+- [ ] Command   pattern
+- [ ] Observer  pattern
+- [ ] State     pattern
+
+
+# Other
+- [x] Iterator  pattern, Generator  pattern
+- [ ] Strategy  pattern
+- [ ] Singleton pattern
+- [ ] Template  pattern
+- [ ] Flyweight pattern
+- [ ] Composite pattern
