@@ -14,11 +14,3 @@ class CapitalIterator:
     def __iter__(self):
         return self
 
-iterator = CapitalIterator('The quick brown fox jump over the lazy dog.')
-
-while True:
-    try:
-        print(next(iterator))
-    except StopIteration:
-        break
-

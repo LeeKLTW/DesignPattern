@@ -14,3 +14,8 @@ class StructureTestCase(unittest.TestCase):
 
     def test_sub_(self):
         self.assertEqual(sub_(100,20), 80)
+
+# if __name__ == '__main__':
+#     unittest.main()
+# or in cmd
+# python -m unittest -v tests/test_structural.py
