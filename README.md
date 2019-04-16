@@ -1,8 +1,7 @@
 (Structural or behavioral)
 
 
-- [x] Iterator  pattern
-- [x] Generator  pattern
+- [x] Iterator  pattern, Generator  pattern
 - [ ] Decorator pattern
 - [ ] Observer  pattern
 - [ ] Strategy  pattern
