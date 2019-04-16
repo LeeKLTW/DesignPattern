@@ -2,6 +2,7 @@
 
 
 - [x] Iterator  pattern
+- [x] Generator  pattern
 - [ ] Decorator pattern
 - [ ] Observer  pattern
 - [ ] Strategy  pattern
