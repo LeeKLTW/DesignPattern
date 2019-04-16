@@ -38,4 +38,4 @@ e.g.
 1. Kivy, the Python Framework for developing user interfaces, has a module called Properties, which implements the Observer pattern.
 2. The [RabbitMQ](https://www.rabbitmq.com/tutorials/tutorial-three-python.html) library can be used to add asynchronous messaging support to an application. Several messaging protocols are supported, such as HTTP and AMQP. RabbitMQ can be used in a Python application to implement a publish-subscribe pattern
 
-
+MVC is an architecture and Observer Pattern is an design pattern. They look similar because MVC uses the observer pattern.
