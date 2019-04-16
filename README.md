@@ -1,4 +1,4 @@
-(Structural or behavioral)
+(Creational, structural or behavioral)
 
 
 - [x] Iterator  pattern, Generator  pattern
