@@ -18,3 +18,4 @@ class IteratorCase(unittest.TestCase):
 # if __name__ == '__main__':
 #     unittest.main()
 # or in cmd
+# python -m unittest -v tests/test_behavior.py
