@@ -1,6 +1,6 @@
 (Structural or behavioral)
 
--[ ] Iterator  pattern
+-[x] Iterator  pattern
 -[ ] Decorator pattern
 -[ ] Observer  pattern
 -[ ] Strategy  pattern
