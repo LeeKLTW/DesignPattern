@@ -8,7 +8,7 @@
 
 # Structural patterns
 - [ ] Adapter   pattern
-- [ ] Decorator pattern
+- [x] Decorator pattern
 - [ ] Bridge pattern
 - [ ] Facade    pattern
 
