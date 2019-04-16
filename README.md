@@ -29,11 +29,19 @@
 # Other
 
 --------
-# doctest
+# testing
+## doctest
 ```
 python -m doctest -v decorator.py
 python -m doctest -v generator.py
 ```
+
+## unittest
+```
+python -m unittest -v tests/test_structural.py
+
+```
+
 --------
 # Note
 ## Observer pattern

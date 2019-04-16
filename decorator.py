@@ -69,7 +69,7 @@ class decorator_class:
         return result
 
 @decorator_class
-def add(*args):
+def add_(*args):
     """
 
     Args:
@@ -88,7 +88,7 @@ def add(*args):
 
 
 @decorator_class
-def sub(x, y):
+def sub_(x, y):
     """
 
     Args:
