@@ -28,7 +28,12 @@
 
 # Other
 
-
+--------
+# doctest
+```
+python -m doctest -v decorator.py
+python -m doctest -v generator.py
+```
 --------
 # Note
 ## Observer pattern

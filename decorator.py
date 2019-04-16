@@ -22,43 +22,82 @@ def decorator_function(fn):
 
 @decorator_function
 def add(*args):
+    """
+
+    Args:
+        *args:
+
+    Returns:
+
+    >>> add(1, 2, 3, 4)
+    10
+    >>> add(2, 2, 3)
+    7
+
+    """
     return sum(args)
 
 
 @decorator_function
 def sub(x, y):
+    """
+
+    Args:
+        x:
+        y:
+
+    Returns:
+    >>> sub(10, 2)
+    8
+    """
     return x - y
 
 
-add(1, 2, 3, 4)
-add(2, 2, 3, 4)
-sub(10, 2)
 
 
 class decorator_class:
     def __init__(self, fn):
         self.fn = fn
 
-    @wraps(self.fn)
+    # @wraps(self.fn) # issue
     def __call__(self, *args, **kwargs):  # similar to decorator function but use __call__, and add instance self
         t_start = time.time()
         result = self.fn(*args, **kwargs)
         t_cost = time.time() - t_start
         logging.debug('Recorded by class.')
-        logging.info(f'Function {fn.__name__} with Arguments: {args}, {kwargs} time cost{t_cost}')
+        logging.info(f'Function {self.fn.__name__} with Arguments: {args}, {kwargs} time cost{t_cost}')
         return result
-
 
 @decorator_class
 def add(*args):
+    """
+
+    Args:
+        *args:
+
+    Returns:
+
+    >>> add(1, 2, 3, 4)
+    10
+    >>> add(2, 2, 3)
+    7
+
+
+    """
     return sum(args)
 
 
 @decorator_class
 def sub(x, y):
+    """
+
+    Args:
+        x:
+        y:
+
+    Returns:
+    >>> sub(8, 2)
+    """
     return x - y
 
 
-add(1, 2, 3, 4)
-add(2, 2, 3, 4)
-sub(8, 2)
