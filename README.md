@@ -20,7 +20,7 @@
 - [x] Iterator  pattern, Generator  pattern
 - [ ] The chain of Responsibility pattern
 - [ ] Command   pattern
-- [ ] [Observer  pattern](#observer-pattern)
+- [x] [Observer  pattern](#observer-pattern)
 - [ ] State     pattern
 - [ ] Template  pattern
 - [ ] Strategy  pattern
