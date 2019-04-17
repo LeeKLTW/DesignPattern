@@ -1,5 +1,6 @@
 import unittest
 from iterator import CapitalIterator
+from observer import Inventory,ConsoleObserver
 
 class IteratorCase(unittest.TestCase):
     def test_iterator(self):
@@ -14,6 +15,19 @@ class IteratorCase(unittest.TestCase):
         self.assertEqual(next(iterator), 'The')
         self.assertEqual(next(iterator), 'Lazy')
         self.assertEqual(next(iterator), 'Dog.')
+
+class ObserverCase(unittest.TestCase):
+    def test_observe(self):
+        inv = Inventory()
+        console = ConsoleObserver(inv)
+        inv.attach(console)
+
+        inv.product = "Widget"
+        inv.quantity = 5
+
+        self.assertEqual(inv.product,console.inventory.product)
+        self.assertEqual(inv.quantity,console.inventory.quantity)
+
 
 # if __name__ == '__main__':
 #     unittest.main()
