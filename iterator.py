@@ -1,4 +1,4 @@
-# encoding: utf-8
+# -*- coding: utf-8 -*-
 class CapitalIterator:
     def __init__(self,string):
         self.words = [w.capitalize() for w in string.split()]
