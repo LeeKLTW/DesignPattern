@@ -50,15 +50,27 @@ class Publisher:
     def notify(self):
         [observer.receive(self) for observer in self.observers]
 
+class Observer:
+    def __init__(self):
+        self.name = None
+        self.value = None
 
-class HexObserver:
-    def receive(self, publisher):
-        name = publisher.name
-        value = hex(publisher.value)
-        print(f'{type(self).__name__} receive {name} with {value}')
+    def __str__(self):
+        return f'{type(self).__name__} receive {self.name} with {self.value}'
 
-class BinaryObserver:
     def receive(self, publisher):
-        name = publisher.name
-        value = bin(publisher.value)
-        print(f'{type(self).__name__} receive {name} with {value}')
+        pass
+
+
+class HexObserver(Observer):
+    def receive(self, publisher):
+        self.name = publisher.name
+        self.value = hex(publisher.value)
+        print(self)
+
+
+class BinaryObserver(Observer):
+    def receive(self, publisher):
+        self.name = publisher.name
+        self.value = bin(publisher.value)
+        print(self)
