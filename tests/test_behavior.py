@@ -1,6 +1,7 @@
 import unittest
 from iterator import CapitalIterator
 from observer import Inventory,ConsoleObserver
+from observer2 import Publisher,BinaryObserver,HexObserver
 
 class IteratorCase(unittest.TestCase):
     def test_iterator(self):
@@ -27,6 +28,20 @@ class ObserverCase(unittest.TestCase):
 
         self.assertEqual(inv.product,console.inventory.product)
         self.assertEqual(inv.quantity,console.inventory.quantity)
+
+#todo
+class Observer2Case(unittest.TestCase):
+    def test_observe2(self):
+        publihser = Publisher()
+        hex_observer = HexObserver()
+        bin_observer = BinaryObserver()
+
+        publihser.attach(hex_observer,bin_observer)
+
+        publihser.name = 'First set'
+        publihser.value = '1'
+        publihser.value = '1.0'
+
 
 
 # if __name__ == '__main__':
