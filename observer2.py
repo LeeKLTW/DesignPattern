@@ -30,15 +30,16 @@ class Publisher:
         try:
             self._value = int(value)
         except ValueError as e:
-            print(e)
+            print(f'{type(self).__name__} with error: {e}')
         else:
             self.notify()
 
-    def attach(self,observer):
-        if observer not in self.observers:
-            self.observers.append(observer)
-        else:
-            print(f'{observer} already attached')
+    def attach(self,*observers):
+        for observer in observers:
+            if observer not in self.observers:
+                self.observers.append(observer)
+            else:
+                print(f'{observer} already attached')
 
     def detach(self,observer):
         try:
