@@ -47,7 +47,7 @@ class TiledStrategy(Strategy):
     def __call__(self, img_file, desktop_size):
         in_img = Image.open(fp=img_file)
         out_img = Image.new(mode="RGB", size=desktop_size)
-        num_tiles = [o // i + 1 for o, i in zip(in_img.size, out_img.size)]
+        num_tiles = [o // i + 1 for o, i in zip(out_img.size, in_img.size)]
         for x in range(num_tiles[0]):
             for y in range(num_tiles[1]):
                 out_img.paste(im=in_img, box=(
@@ -62,8 +62,8 @@ class CenteredStrategy(Strategy):
     def __call__(self, img_file, desktop_size):
         in_img = Image.open(fp=img_file)
         out_img = Image.new(mode="RGB", size=desktop_size)
-        left = out_img.size[0] - in_img.size[0] // 2
-        top = out_img.size[1] - in_img.size[1] // 2
+        left = (out_img.size[0] - in_img.size[0]) // 2
+        top = (out_img.size[1] - in_img.size[1]) // 2
         out_img.paste(im=in_img, box=(left, top, left + in_img.size[0], top + in_img.size[1]),
                       )
         return out_img
@@ -104,7 +104,7 @@ def main(in_img_path, desktop_size, tiled, centered, scaled):
         strategy = ScaledStrategy()
         out_img = strategy(in_img_path, desktop_size)
 
-    out_img_path = os.path.splitext(in_img_path)[0] + f'_{strategy}_' + os.path.splitext(in_img_path)[1]
+    out_img_path = os.path.splitext(in_img_path)[0] + f'_{strategy}' + os.path.splitext(in_img_path)[1]
     out_img.save(out_img_path)
 
 
