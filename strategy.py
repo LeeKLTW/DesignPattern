@@ -6,7 +6,6 @@ but implement it using a more readable syntax.
 """
 import abc
 import os
-from typing import overload,runtime
 
 from PIL import Image
 from argparse import ArgumentParser
