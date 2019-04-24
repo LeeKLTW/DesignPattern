@@ -6,6 +6,8 @@ but implement it using a more readable syntax.
 """
 import abc
 import os
+from typing import overload,runtime
+
 from PIL import Image
 from argparse import ArgumentParser
 
@@ -106,7 +108,6 @@ def main(in_img_path, desktop_size, tiled, centered, scaled):
 
     out_img_path = os.path.splitext(in_img_path)[0] + f'_{strategy}' + os.path.splitext(in_img_path)[1]
     out_img.save(out_img_path)
-
 
 if __name__ == '__main__':
     parser.add_argument("in_img_path", type=str)
