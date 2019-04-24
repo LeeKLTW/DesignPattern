@@ -18,15 +18,29 @@ To see why strategy pattern is unnecessary, see function way.
 
 
 def tiled_strategy(img_file, desktop_size):
-    pass
+    in_img = Image.open(fp=img_file)
+    out_img = Image.new(mode="RGB", size=desktop_size)
+    num_tiles = [o // i + 1 for o, i in zip(out_img.size, in_img.size)]
+    for x in range(num_tiles[0]):
+        for y in range(num_tiles[1]):
+            out_img.paste(im=in_img, box=(
+                in_img.size[0] * x, in_img.size[1] * y, in_img.size[0] * (x + 1), in_img.size[1] * (y + 1)))
+    return out_img
 
 
 def centered_strategy(img_file, desktop_size):
-    pass
+    in_img = Image.open(fp=img_file)
+    out_img = Image.new(mode="RGB", size=desktop_size)
+    left = (out_img.size[0] - in_img.size[0]) // 2
+    top = (out_img.size[1] - in_img.size[1]) // 2
+    out_img.paste(im=in_img, box=(left, top, left + in_img.size[0], top + in_img.size[1]),)
+    return out_img
 
 
 def scaled_strategy(img_file, desktop_size):
-    pass
+    in_img = Image.open(fp=img_file)
+    out_img = in_img.resize(desktop_size)
+    return out_img
 
 
 """
@@ -87,11 +101,12 @@ def main(in_img_path, desktop_size, tiled, centered, scaled):
     if not os.path.exists(in_img_path):
         print('File does not exist')
         return
-    elif tiled + centered + scaled < 1:
+    elif (tiled + centered + scaled) < 1:
         print('Please select a strategy.')
         return
-    elif tiled + centered + scaled > 1:
+    elif (tiled + centered + scaled) > 1:
         print('Please select ONLY ONE strategy.')
+        return
 
     elif tiled:
         strategy = TiledStrategy()
@@ -104,6 +119,10 @@ def main(in_img_path, desktop_size, tiled, centered, scaled):
     elif scaled:
         strategy = ScaledStrategy()
         out_img = strategy(in_img_path, desktop_size)
+
+    else:
+        print('Please try again.')
+        return
 
     out_img_path = os.path.splitext(in_img_path)[0] + f'_{strategy}' + os.path.splitext(in_img_path)[1]
     out_img.save(out_img_path)
