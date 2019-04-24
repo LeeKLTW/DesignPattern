@@ -40,7 +40,25 @@ class ScaledStrategy:
         out_img = in_img.resize(desktop_size)
         return out_img
 
+"""
+To see why strategy pattern is unnecessary, see function way.
+"""
 
+def tiled_strategy(img_file, desktop_size):
+    pass
+
+
+def centered_strategy(img_file, desktop_size):
+    pass
+
+
+def scaled_strategy(img_file, desktop_size):
+    pass
+
+
+"""
+However, it will be useful to use class for abc.
+"""
 
 def main(in_img_path, tiled, centered, scaled):
     if not os.path.exists(in_img_path):
