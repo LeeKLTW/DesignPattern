@@ -11,39 +11,10 @@ from argparse import ArgumentParser
 
 parser = ArgumentParser()
 
-
-class TiledStrategy:
-    def __call__(self, img_file, desktop_size):
-        in_img = Image.open(fp=img_file)
-        out_img = Image.new(model="RGB", size=desktop_size)
-        num_tiles = [o // i + 1 for o, i in zip(in_img.size, out_img.size)]
-        for x in range(num_tiles[0]):
-            for y in range(num_tiles[1]):
-                out_img.paste(im=in_img, box=(
-                    in_img.size[0] * x, in_img.size[1] * y, in_img.size[0] * (x + 1), in_img.size[1] * (y + 1)))
-        return out_img
-
-
-class CenteredStrategy:
-    def __call__(self, img_file, desktop_size):
-        in_img = Image.open(fp=img_file)
-        out_img = Image.new(model="RGB", size=desktop_size)
-        left = out_img.size[0] - in_img.size[0] // 2
-        top = out_img.size[1] - in_img.size[1] // 2
-        out_img.paste(im=in_img, box=(left, top, left + in_img.size[0], top + in_img.size[1]),
-                      )
-        return out_img
-
-
-class ScaledStrategy:
-    def __call__(self, img_file, desktop_size):
-        in_img = Image.open(fp=img_file)
-        out_img = in_img.resize(desktop_size)
-        return out_img
-
 """
 To see why strategy pattern is unnecessary, see function way.
 """
+
 
 def tiled_strategy(img_file, desktop_size):
     pass
@@ -60,12 +31,58 @@ def scaled_strategy(img_file, desktop_size):
 """
 However, it will be useful to use class for abc.
 """
+
+
 class Strategy:
     @abc.abstractmethod
-    def __call__(self,img_file, desktop_size):
+    def __call__(self, img_file, desktop_size):
         return NotImplemented
 
-def main(in_img_path, tiled, centered, scaled):
+    @abc.abstractmethod
+    def __str__(self):
+        return NotImplemented
+
+
+class TiledStrategy(Strategy):
+    def __call__(self, img_file, desktop_size):
+        in_img = Image.open(fp=img_file)
+        out_img = Image.new(mode="RGB", size=desktop_size)
+        num_tiles = [o // i + 1 for o, i in zip(in_img.size, out_img.size)]
+        for x in range(num_tiles[0]):
+            for y in range(num_tiles[1]):
+                out_img.paste(im=in_img, box=(
+                    in_img.size[0] * x, in_img.size[1] * y, in_img.size[0] * (x + 1), in_img.size[1] * (y + 1)))
+        return out_img
+
+    def __str__(self):
+        return 'tiled'
+
+
+class CenteredStrategy(Strategy):
+    def __call__(self, img_file, desktop_size):
+        in_img = Image.open(fp=img_file)
+        out_img = Image.new(mode="RGB", size=desktop_size)
+        left = out_img.size[0] - in_img.size[0] // 2
+        top = out_img.size[1] - in_img.size[1] // 2
+        out_img.paste(im=in_img, box=(left, top, left + in_img.size[0], top + in_img.size[1]),
+                      )
+        return out_img
+
+    def __str__(self):
+        return 'centered'
+
+
+class ScaledStrategy(Strategy):
+    def __call__(self, img_file, desktop_size):
+        in_img = Image.open(fp=img_file)
+        out_img = in_img.resize(desktop_size)
+        return out_img
+
+    def __str__(self):
+        return 'scaled'
+
+
+def main(in_img_path, desktop_size, tiled, centered, scaled):
     if not os.path.exists(in_img_path):
         print('File does not exist')
         return
@@ -76,26 +93,29 @@ def main(in_img_path, tiled, centered, scaled):
         print('Please select ONLY ONE strategy.')
 
     elif tiled:
-        out_img = TiledStrategy(in_img_path)
-        strategy = 'tiled'
+        strategy = TiledStrategy()
+        out_img = strategy(in_img_path, desktop_size)
 
     elif centered:
-        out_img = CenteredStrategy(in_img_path)
-        strategy = 'centered'
+        strategy = CenteredStrategy()
+        out_img = strategy(in_img_path, desktop_size)
 
     elif scaled:
-        out_img = ScaledStrategy(in_img_path)
-        strategy = 'scaled'
+        strategy = ScaledStrategy()
+        out_img = strategy(in_img_path, desktop_size)
 
-    out_img_path = os.path.splitext(in_img_path)[0]+strategy+os.path.splitext(in_img_path)[1]
+    out_img_path = os.path.splitext(in_img_path)[0] + f'_{strategy}_' + os.path.splitext(in_img_path)[1]
     out_img.save(out_img_path)
 
 
 if __name__ == '__main__':
-    parser.add_argument("path", dest="in_img_path", type=str)
+    parser.add_argument("in_img_path", type=str)
+    parser.add_argument("-x", dest="x", type=int)
+    parser.add_argument("-y", dest="y", type=int)
     parser.add_argument("-t", dest="tiled", action="store_true")
     parser.add_argument("-c", dest="centered", action="store_true")
     parser.add_argument("-s", dest="scaled", action="store_true")
 
     args, unparsed = parser.parse_known_args()
-    main(args.path, args.tiled, args.centered, args.scaled)
+    desktop_size = (args.x, args.y)
+    main(args.in_img_path, desktop_size, args.tiled, args.centered, args.scaled)
