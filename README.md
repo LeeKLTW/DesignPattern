@@ -23,7 +23,7 @@
 - [x] [Observer  pattern](#observer-pattern)
 - [ ] State     pattern
 - [ ] Template  pattern
-- [ ] Strategy  pattern
+- [x] Strategy  pattern
 
 
 # Other
