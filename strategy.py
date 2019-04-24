@@ -4,6 +4,7 @@ Because Python has first-class functions, the strategy pattern is unnecessary.
 Knowing the pattern exists can still help us choose a correct design for our program,
 but implement it using a more readable syntax.
 """
+import abc
 import os
 from PIL import Image
 from argparse import ArgumentParser
@@ -59,6 +60,10 @@ def scaled_strategy(img_file, desktop_size):
 """
 However, it will be useful to use class for abc.
 """
+class Strategy:
+    @abc.abstractmethod
+    def __call__(self,img_file, desktop_size):
+        return NotImplemented
 
 def main(in_img_path, tiled, centered, scaled):
     if not os.path.exists(in_img_path):
