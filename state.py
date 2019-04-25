@@ -10,3 +10,11 @@ class Node:
             return self.tag_name+':'+ self.text
         else:
             return self.tag_name
+
+class Parser:
+    def __init__(self,parse_string):
+        pass
+    def process(self,remaining_string):
+        pass
+    def start(self):
+        pass
