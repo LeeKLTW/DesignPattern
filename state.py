@@ -13,6 +13,27 @@ class Node:
             return self.tag_name
 
 
+class ChildNode:
+    def process(self, remaining_string, parser):
+        stripped = remaining_string.strip()
+        if stripped.startswith("</"):
+            parser.state = CloseTag()
+        elif stripped.startswith("<"):
+            parser.state = OpenTag()
+        else:
+            parser.state = TextNode()
+        return stripped
+
+
+class TextNode:
+    def process(self, remaining_string, parser):
+        i_start_tag = remaining_string.find('<')
+        text = remaining_string[:i_start_tag]
+        parser.current_node.text = text
+        parser.state = ChildNode()
+        return remaining_string[i_start_tag:]
+
+
 class Parser:
     def __init__(self, parse_string):
         self.parse_string = parse_string
