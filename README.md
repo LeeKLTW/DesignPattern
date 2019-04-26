@@ -21,7 +21,7 @@
 - [ ] The chain of Responsibility pattern
 - [ ] Command   pattern
 - [x] [Observer  pattern](#observer-pattern)
-- [ ] State     pattern
+- [ ] [State     pattern](#state-pattern)
 - [ ] Template  pattern
 - [x] Strategy  pattern
 
@@ -52,3 +52,10 @@ e.g.
 2. The [RabbitMQ](https://www.rabbitmq.com/tutorials/tutorial-three-python.html) library can be used to add asynchronous messaging support to an application. Several messaging protocols are supported, such as HTTP and AMQP. RabbitMQ can be used in a Python application to implement a publish-subscribe pattern
 
 MVC is an architecture and Observer Pattern is an design pattern. They look similar because MVC uses the observer pattern.
+
+## State pattern
+A state machine is an abstract machine that has two key components, that is, states and transitions.
+
+A nice feature of state machines is that they can be represented as graphs (called state diagrams)
+
+The django-fsm package is a third-party package that can be used to simplify the implementation and usage of state machines in the Django Framework.
