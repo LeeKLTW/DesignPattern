@@ -93,3 +93,20 @@ class CloseTag:
         return remaining
 
 
+def main():
+    import sys
+
+    with open(sys.argv[1]) as file:
+        contents = file.read()
+        p = Parser(contents)
+        p.start()
+
+        nodes = [p.root]
+        while nodes:
+            node = nodes.pop(0)
+            print(node)
+            nodes = node.children + nodes
+
+
+if __name__ == "__main__":
+    main()
