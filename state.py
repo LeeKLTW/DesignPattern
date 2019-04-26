@@ -15,23 +15,60 @@ class Node:
 
 class Parser:
     def __init__(self, parse_string):
-        pass
+        self.parse_string = parse_string
+        self.root = None
+        self.current_node = None
+        self.state = FirstTag()
 
     def process(self, remaining_string):
-        pass
+        remaining = self.state.process(remaining_string, self)
+        if remaining:
+            self.process(remaining)
 
     def start(self):
-        pass
+        self.process(self.parse_string)
+
 
 class FirstTag:
     def process(self, remaining_string, parser):
-        pass
+        i_start_tag = remaining_string.find("<")
+        i_end_tag = remaining_string.find(">")
+        tag_name = remaining_string[i_start_tag + 1: i_end_tag]
+        remaining = remaining_string[i_end_tag + 1:]
+
+        root = Node(tag_name)
+        parser.root = parser.current_node = root
+        parser.state = ChildNode()
+        return remaining
+
 
 class OpenTag:
     def process(self, remaining_string, parser):
-        pass
+        i_start_tag = remaining_string.find("<")
+        i_end_tag = remaining_string.find(">")
+        tag_name = remaining_string[i_start_tag + 1: i_end_tag]
+        remaining = remaining_string[i_end_tag + 1:]
+
+        node = Node(tag_name, parser.current_node)
+
+        parser.current_node.children.append(node)
+        parser.current_node = node
+        parser.state = ChildNode()
+        return remaining
+
 
 class CloseTag:
     def process(self, remaining_string, parser):
-        pass
+        i_start_tag = remaining_string.find("<")
+        i_end_tag = remaining_string.find(">")
+        assert remaining_string[i_start_tag + 1] == '/'
+        tag_name = remaining_string[i_start_tag + 2: i_end_tag]
+        assert tag_name == parser.current_node.name
+        remaining = remaining_string[i_end_tag + 1:].strip()
+
+        parser.current_node = parser.current_node.parent
+        parser.state = ChildNode()
+
+        return remaining
+
 
