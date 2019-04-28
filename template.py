@@ -20,3 +20,15 @@ conn.commit()
 cur.execute("INSERT INTO Sales VALUES ('Don', 20000, 2008, 'Toyota Prius', 'false')")
 conn.commit()
 conn.close()
+
+class QueryTemplate:
+    pass
+
+
+class NewVehiclesQuery(QueryTemplate):
+    pass
+
+
+class UserGrossQuery(QueryTemplate):
+    pass
+
