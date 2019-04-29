@@ -31,8 +31,12 @@ class Server(metaclass=ABCMeta):
         self.state = State.running
 
     def kill(self, restart=True):
-        print(f'Killing {self}')
-        self.state = State.restart if restart else State.zombie
+        if restart:
+            self.state = State.restart
+            print(f'Restart {self}')
+        else:
+            self.state =  State.zombie
+            print(f'Killing {self}')
 
 
 class FileServer(Server):
@@ -79,7 +83,7 @@ class OperatingSystem:
         return self.file_server.create_file(user, name, permissions)
 
     def create_process(self, user, name):
-        return self.create_file(user, name)
+        return self.process_server.create_process(user, name)
 
     def restart(self):
         [i.kill() for i in (self.file_server, self.process_server)]
@@ -95,6 +99,7 @@ def main():
     os.create_process('root', 'bin')
     os.restart()
     os.shutdown()
+    print('Finish. Shutdown')
 
 
 if __name__ == '__main__':
