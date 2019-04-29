@@ -62,7 +62,7 @@ class NewVehiclesQuery(QueryTemplate):
         self.query = "SELECT * FROM Sales WHERE new ='true'"
 
     def output_results(self):
-        print(self.format_results())
+        print(self.formatted_results)
 
 
 class UserGrossQuery(QueryTemplate):
@@ -70,16 +70,16 @@ class UserGrossQuery(QueryTemplate):
         self.query = "SELECT salesperson,SUM(amt) FROM Sales GROUP BY salesperson;"
 
     def output_results(self):
-        print(self.format_results())
+        print(self.formatted_results)
 
 
 def main():
     while True:
         opt = input('Insert 1 for New car sales report. 2 For sales of each salesperson. Other to quit.')
-        if opt == 1:
+        if opt == str(1):
             query = NewVehiclesQuery()
             query()
-        elif opt == 2:
+        elif opt == str(2):
             query = UserGrossQuery()
             query()
         else:
