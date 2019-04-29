@@ -12,7 +12,7 @@
 - [x] Decorator pattern
 - [ ] Bridge pattern
 - [x] [Facade    pattern](#facade-pattern)
-- [ ] Flyweight pattern
+- [ ] [Flyweight pattern](#flyweight-pattern)
 - [ ] Composite pattern
 
 
@@ -47,13 +47,19 @@ python -m unittest -v tests/test_structural.py
 ## Facade pattern
 
 dictionary.cambridge
-> the front of a building, especially a large or attractive building:
+> the front of a building, especially a large or attractive building
 
 providing a single, simple entry point to a complex system
 
 Façade is also useful if you have more than one layer in your system. You can introduce one façade entry point per layer, and let all layers communicate with each other through their façades. That promotes loose coupling and keeps the layers as independent as possible.
 
 [requests](https://2.python-requests.org/en/master/)
+
+## Flyweight pattern
+
+The flyweight pattern ensures that objects that share a state can use the same memory for that shared state. 
+But bear in mind that premature optimization is the most effective way to create a program that is too complicated to maintain.
+It is normally implemented only after a program has demonstrated memory problems
 
 
 ## Adapter pattern
