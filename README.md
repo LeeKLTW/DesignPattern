@@ -11,7 +11,7 @@
 - [ ] [Adapter pattern](#adapter-pattern)
 - [x] Decorator pattern
 - [ ] Bridge pattern
-- [ ] [Facade    pattern](#facade-pattern)
+- [x] [Facade    pattern](#facade-pattern)
 - [ ] Flyweight pattern
 - [ ] Composite pattern
 
