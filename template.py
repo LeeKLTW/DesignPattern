@@ -49,6 +49,13 @@ class QueryTemplate:
     def output_results(self):
         raise NotImplemented
 
+    def __call__(self):
+        self.connect()
+        self.construct_query()
+        self.do_query()
+        self.format_results()
+        self.output_results()
+
 
 class NewVehiclesQuery(QueryTemplate):
     pass
