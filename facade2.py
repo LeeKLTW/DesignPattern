@@ -12,29 +12,51 @@ because the message passing is more complex than the shared memory model used in
 from enum import Enum
 from abc import ABCMeta, abstractmethod
 
-State = Enum('State','new running sleeping restart zombie')
+State = Enum('State','new running sleeping restart zombie') #<enum 'State'>
+# [<State.new: 1>, <State.running: 2>, <State.sleeping: 3>, <State.restart: 4>, <State.zombie: 5>]
+# 'name', 'value'
 
 class Server(metaclass=ABCMeta):
     @abstractmethod
     def __init__(self):
-        pass
+        return NotImplemented
 
     def __str__(self):
         return self.name
 
     @abstractmethod
     def boot(self):
-        pass
+        return NotImplemented
 
     @abstractmethod
     def kill(self, restart=True):
-        pass
+        return NotImplemented
 
 class FileServer(Server):
-    pass
+    def __init__(self):
+        self.name = 'FileServer'
+        self.state = State.new
+
+    def boot(self):
+        print(f'Booting {self}')
+        self.state = State.running
+
+    def kill(self,restart=True):
+        print(f'Killing {self}')
+        self.state = State.restart if restart else State.zombie
+
+    def create_file(self, user, name, permission):
+        print(f'trying to create the file {name} for {user} with permission {permission}')
+
 
 class ProcessServer(Server):
-    pass
+
+    def boot(self):
+        pass
+
+    def kill(self):
+        pass
+
 
 class OperatingSystem:
     """The Facade"""
