@@ -81,3 +81,21 @@ class OperatingSystem:
     def create_process(self, user, name):
         return self.create_file(user, name)
 
+    def restart(self):
+        [i.kill() for i in (self.file_server, self.process_server)]
+
+    def shutdown(self):
+        [i.kill(restart=False) for i in (self.file_server, self.process_server)]
+
+
+def main():
+    os = OperatingSystem()
+    os.start()
+    os.create_file('root', 'tmp/log', '-rw-r-r')
+    os.create_process('root', 'bin')
+    os.restart()
+    os.shutdown()
+
+
+if __name__ == '__main__':
+    main()
