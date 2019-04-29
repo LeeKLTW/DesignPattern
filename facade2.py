@@ -12,7 +12,9 @@ because the message passing is more complex than the shared memory model used in
 from enum import Enum
 from abc import ABCMeta, abstractmethod
 
-State = Enum('State','new running sleeping restart zombie') #<enum 'State'>
+State = Enum('State', 'new running sleeping restart zombie')  # <enum 'State'>
+
+
 # [<State.new: 1>, <State.running: 2>, <State.sleeping: 3>, <State.restart: 4>, <State.zombie: 5>]
 # 'name', 'value'
 
@@ -24,26 +26,19 @@ class Server(metaclass=ABCMeta):
     def __str__(self):
         return self.name
 
-    @abstractmethod
     def boot(self):
-        return NotImplemented
+        print(f'Booting {self}')
+        self.state = State.running
 
-    @abstractmethod
     def kill(self, restart=True):
-        return NotImplemented
+        print(f'Killing {self}')
+        self.state = State.restart if restart else State.zombie
+
 
 class FileServer(Server):
     def __init__(self):
         self.name = 'FileServer'
         self.state = State.new
-
-    def boot(self):
-        print(f'Booting {self}')
-        self.state = State.running
-
-    def kill(self,restart=True):
-        print(f'Killing {self}')
-        self.state = State.restart if restart else State.zombie
 
     def create_file(self, user, name, permission):
         print(f'trying to create the file {name} for {user} with permission {permission}')
@@ -54,19 +49,35 @@ class ProcessServer(Server):
         self.name = 'ProcessServer'
         self.state = State.new
 
-    def boot(self):
-        print(f'Booting {self}')
-        self.state = State.running
-
-    def kill(self,restart=True):
-        print(f'Killing {self}')
-        self.state = State.restart if restart else State.zombie
-
-    def create_process(self, user,name):
+    def create_process(self, user, name):
         print(f'tring to create process {name} for {user}')
 
+
+class User:
+    pass
+
+
+class File:
+    pass
+
+
+class Process:
+    pass
 
 
 class OperatingSystem:
     """The Facade"""
-    pass
+
+    def __init__(self):
+        self.file_server = FileServer()
+        self.process_server = ProcessServer()
+
+    def start(self):
+        [i.boot() for i in (self.file_server, self.process_server)]
+
+    def create_file(self, user, name, permissions):
+        return self.file_server.create_file(user, name, permissions)
+
+    def create_process(self, user, name):
+        return self.create_file(user, name)
+
