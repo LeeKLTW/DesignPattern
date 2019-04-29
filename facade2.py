@@ -19,7 +19,7 @@ State = Enum('State','new running sleeping restart zombie') #<enum 'State'>
 class Server(metaclass=ABCMeta):
     @abstractmethod
     def __init__(self):
-        return NotImplemented
+        pass
 
     def __str__(self):
         return self.name
@@ -50,12 +50,21 @@ class FileServer(Server):
 
 
 class ProcessServer(Server):
+    def __init__(self):
+        self.name = 'ProcessServer'
+        self.state = State.new
 
     def boot(self):
-        pass
+        print(f'Booting {self}')
+        self.state = State.running
 
-    def kill(self):
-        pass
+    def kill(self,restart=True):
+        print(f'Killing {self}')
+        self.state = State.restart if restart else State.zombie
+
+    def create_process(self, user,name):
+        print(f'tring to create process {name} for {user}')
+
 
 
 class OperatingSystem:
