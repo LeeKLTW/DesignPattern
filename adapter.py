@@ -28,6 +28,15 @@ class DateAgeAdapter:
 
 
 # class AgeableDate(datetime.date):
-#     def split(self,char):
+#     def split(self):
 #         return self.year, self.month, self.day
-
+#
+# s = datetime.datetime(2001,1,11).strftime("%Y-%m-%d")
+# year, month, day = (int(i) for i in s.split("-"))
+#
+# bd = AgeableDate(1975, 6, 14)
+# today = AgeableDate.today()
+# today.split()
+# bd.split()
+# a = AgeCalculator(bd)
+# a.calculate_age(today)
