@@ -8,7 +8,7 @@
 
 
 # Structural patterns
-- [ ] Adapter   pattern
+- [ ] [Adapter pattern](#adapter-pattern)
 - [x] Decorator pattern
 - [ ] Bridge pattern
 - [ ] Facade    pattern
@@ -44,6 +44,11 @@ python -m unittest -v tests/test_structural.py
 
 --------
 # Note
+
+## Adapter pattern
+Adapters are used to allow two preexisting objects to work together, even if their interfaces are not compatible.
+Adapter pattern is similar to a simplified decorator pattern. Decorators typically provide the same interface that they replace, whereas adapters map between two different interfaces.
+
 ## Observer pattern
 when we want to inform/update one or more objects (observers/subscribers) about a change that happened on a given object (subject/publisher/observable)
 
