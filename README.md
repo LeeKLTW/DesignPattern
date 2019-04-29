@@ -11,7 +11,7 @@
 - [ ] [Adapter pattern](#adapter-pattern)
 - [x] Decorator pattern
 - [ ] Bridge pattern
-- [ ] Facade    pattern
+- [ ] [Facade    pattern](#facade-pattern)
 - [ ] Flyweight pattern
 - [ ] Composite pattern
 
@@ -44,6 +44,13 @@ python -m unittest -v tests/test_structural.py
 
 --------
 # Note
+## Facade pattern
+providing a single, simple entry point to a complex system
+
+Façade is also useful if you have more than one layer in your system. You can introduce one façade entry point per layer, and let all layers communicate with each other through their façades. That promotes loose coupling and keeps the layers as independent as possible.
+
+[requests](https://2.python-requests.org/en/master/)
+
 
 ## Adapter pattern
 Adapters are used to allow two preexisting objects to work together, even if their interfaces are not compatible.
