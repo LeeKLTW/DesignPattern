@@ -22,7 +22,7 @@
 - [ ] Command   pattern
 - [x] [Observer  pattern](#observer-pattern)
 - [ ] [State     pattern](#state-pattern)
-- [ ] Template  pattern
+- [x] Template  pattern
 - [x] Strategy  pattern
 
 
