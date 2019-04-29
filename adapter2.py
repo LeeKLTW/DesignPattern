@@ -48,10 +48,10 @@ def main():
             obj = Adapter(obj, adapted_methods)
             print(f'{obj} {obj.organized_event()}')
 
-
         elif hasattr(obj,'dance'):
             adapted_methods = dict(organized_event=obj.dance)
             obj = Adapter(obj, adapted_methods)
             print(f'{obj} {obj.organized_event()}')
 
+# todo club part
 
