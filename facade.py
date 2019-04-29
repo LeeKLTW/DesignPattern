@@ -1,4 +1,11 @@
 # -*- coding: utf-8 -*-
+"""
+A simple facade for an email application.
+
+Simple class that allows us to send a single email, and list the emails currently in the inbox
+on an IMAP or POP3 connection, two  different low-level subsystems.
+
+"""
 import smtplib
 import imaplib
 
