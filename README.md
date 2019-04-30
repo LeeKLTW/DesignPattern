@@ -1,9 +1,10 @@
 (Creational, structural or behavioral)
 
 # Creational patterns
-- [ ] Abstract Factory pattern
 - [ ] Factory* pattern
+- [ ] Abstract Factory pattern
 - [ ] Builder pattern
+- [ ] Lazy Evaluation
 - [ ] Singleton pattern
 
 
