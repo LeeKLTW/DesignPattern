@@ -7,7 +7,6 @@ import abc
 
 class Animal(abc.ABC):
 
-    @abc.abstractmethod
     def __str__(self):
         pass
 
@@ -21,8 +20,22 @@ class Animal(abc.ABC):
 
 
 class Dog(Animal):
-    pass
+    def __str__(self):
+        return f'Dog at {id(self)}'
+
+    def speak(self):
+        return 'woof'
+
+    def act(self):
+        return 'running'
 
 
 class Cat(Animal):
-    pass
+    def __str__(self):
+        return f'Cat at {id(self)}'
+
+    def speak(self):
+        return 'meow'
+
+    def act(self):
+        return 'climbing'
