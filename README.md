@@ -5,7 +5,7 @@
 - [x] Abstract Factory pattern
 - [ ] Builder pattern
 - [ ] Lazy Evaluation
-- [ ] Singleton pattern
+- [x] Singleton pattern
 
 
 # Structural patterns
