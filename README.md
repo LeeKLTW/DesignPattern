@@ -82,3 +82,8 @@ A state machine is an abstract machine that has two key components, that is, sta
 A nice feature of state machines is that they can be represented as graphs (called state diagrams)
 
 The django-fsm package is a third-party package that can be used to simplify the implementation and usage of state machines in the Django Framework.
+
+--------
+# reference
+
+https://github.com/LeeKLTW/python-patterns
