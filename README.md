@@ -9,7 +9,7 @@
 
 
 # Structural patterns
-- [ ] [Adapter pattern](#adapter-pattern)
+- [x] [Adapter pattern](#adapter-pattern)
 - [x] Decorator pattern
 - [ ] Bridge pattern
 - [x] [Facade    pattern](#facade-pattern)
