@@ -1,7 +1,7 @@
 (Creational, structural or behavioral)
 
 # Creational patterns
-- [x] Factory pattern
+- [ ] Factory* pattern
 - [x] Abstract Factory pattern
 - [ ] Builder pattern
 - [ ] Lazy Evaluation
@@ -9,7 +9,7 @@
 
 
 # Structural patterns
-- [x] [Adapter pattern](#adapter-pattern)
+- [ ] [Adapter pattern](#adapter-pattern)
 - [x] Decorator pattern
 - [ ] Bridge pattern
 - [x] [Facade    pattern](#facade-pattern)
