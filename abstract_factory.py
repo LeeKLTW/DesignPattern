@@ -7,7 +7,7 @@ import abc
 
 class Animal(abc.ABC):
 
-    def __str__(self):
+    def __repr__(self):
         pass
 
     @abc.abstractmethod
@@ -20,7 +20,7 @@ class Animal(abc.ABC):
 
 
 class Dog(Animal):
-    def __str__(self):
+    def __repr__(self):
         return f'Dog at {id(self)}'
 
     def speak(self):
@@ -31,7 +31,7 @@ class Dog(Animal):
 
 
 class Cat(Animal):
-    def __str__(self):
+    def __repr__(self):
         return f'Cat at {id(self)}'
 
     def speak(self):

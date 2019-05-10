@@ -3,7 +3,7 @@ class Club:
     def __init__(self, name):
         self.name = name
 
-    def __str__(self):
+    def __repr__(self):
         return f'the club {self.name}'
 
     def organize_event(self):
@@ -14,7 +14,7 @@ class Musician:
     def __init__(self, name):
         self.name = name
 
-    def __str__(self):
+    def __repr__(self):
         return f'the musician {self.name}'
 
     def play(self):
@@ -36,7 +36,7 @@ class Adapter:
         self.obj = obj
         self.__dict__.update(adapted_methods)
 
-    def __str__(self):
+    def __repr__(self):
         return str(self.obj)
 
 
