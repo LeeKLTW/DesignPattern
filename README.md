@@ -3,7 +3,7 @@
 # Creational patterns
 - [ ] Factory* pattern
 - [x] Abstract Factory pattern
-- [ ] Builder pattern
+- [x] Builder pattern
 - [ ] Lazy Evaluation
 - [ ] Prototype pattern
 - [x] Singleton pattern
