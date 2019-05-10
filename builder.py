@@ -1,27 +1,39 @@
 # -*- coding: utf-8 -*-
-import abc
+# In general, in Python this won't be necessary.
+
+
 class Building:
+    # __init__ is defined in here , __init__ specifies the steps needed, and the concrete subclasses implement these steps.
     def __init__(self):
-        self.build_florr()
+        self.build_floor()
         self.build_size()
 
-    @abc.abstractmethod
-    def build_florr(self):
+    def build_floor(self):
         return NotImplemented
 
-    @abc.abstractmethod
     def build_size(self):
         return NotImplemented
 
-    def __str__(self):
+    def __repr__(self):
         return 'Floor: {0.floor} | Size:{0.size}'.format(self)
 
 
 class House(Building):
-    pass
+    # __init__ not defined in here
+    def build_floor(self):
+        self.floor = 'One'
+
+    def build_size(self):
+        self.size = 'Big'
+
 
 class Flat(Building):
-    pass
+    # __init__ not defined in here
+    def build_floor(self):
+        self.floor = 'More than one.'
+
+    def build_size(self):
+        self.size = 'Small'
 
 
 # ref: https://github.com/faif/python-patterns/blob/master/patterns/creational/builder.py
@@ -31,10 +43,65 @@ class Flat(Building):
 # a concrete class does not have a useful constructor)
 
 class ComplexBuilding:
-    pass
+    # no __init__ here, define another function to build instance
+    def __repr__(self):
+        try:
+            return '[Complex] Floor: {0.floor} | Size:{0.size}'.format(self)
+        except:
+            try:
+                return '[Complex-floor-only] Floor: {0.floor}'.format(self)
+            except:
+                return '[Complex-size-only] Size:{0.size}'.format(self)
+
 
 class ComplexHouse(ComplexBuilding):
-    pass
+    def build_floor(self):
+        self.floor = 'One'
+
+    def build_size(self):
+        self.size = 'Big and fancy'
+
+
+class ComplexFlat(ComplexBuilding):
+    def build_floor(self):
+        self.floor = 'More than one.'
+
+    def build_size(self):
+        self.size = 'Small and fancy'
 
 def construct_building(cls):
-    pass
+    # cls == class ComplexHouse or ComplexHouseFlat
+    building = cls()  # !
+    building.build_floor()
+    building.build_size()
+    return building
+
+def construct_floor_only(cls):
+    building = cls()  # !
+    building.build_floor()
+    return building
+
+def construct_size_only(cls):
+    building = cls()  # !
+    building.build_size()
+    return building
+
+
+
+def main():
+    house = House()
+    flat = Flat()
+    print(house)
+    print(flat)
+    try:
+        ch = ComplexHouse()
+        print(ch)
+    except AttributeError:
+        print("AttributeError: 'ComplexHouse' object has no attribute 'size'. Because ComplexHouse.build_floor(), ComplexHouse.build_size() are not called yet.")
+
+    ch = construct_building(ComplexHouse)
+    print(ch)
+    chfo = construct_floor_only(ComplexHouse)
+    print(chfo)
+    cfso = construct_size_only(ComplexFlat)
+    print(cfso)
