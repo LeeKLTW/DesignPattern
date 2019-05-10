@@ -12,7 +12,7 @@
 # Structural patterns
 - [ ] [Adapter pattern](#adapter-pattern)
 - [x] Decorator pattern
-- [ ] Bridge pattern
+- [x] Bridge pattern
 - [x] [Facade    pattern](#facade-pattern)
 - [ ] [Flyweight pattern](#flyweight-pattern)
 - [ ] Composite pattern
