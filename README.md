@@ -10,7 +10,7 @@
 
 
 # Structural patterns
-- [ ] [Adapter pattern](#adapter-pattern)
+i- [ ] [Adapter pattern](#adapter-pattern)
 - [x] Decorator pattern
 - [x] Bridge pattern
 - [x] [Facade    pattern](#facade-pattern)
@@ -21,7 +21,7 @@
 # Behavior patterns
 - [x] Iterator  pattern, Generator  pattern
 - [ ] The chain of Responsibility pattern
-- [ ] Command   pattern
+- [x] Command   pattern
 - [x] [Observer  pattern](#observer-pattern)
 - [ ] [State     pattern](#state-pattern)
 - [x] Template  pattern
