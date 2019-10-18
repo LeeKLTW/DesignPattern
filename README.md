@@ -47,6 +47,11 @@ python -m unittest -v tests/test_structural.py
 --------
 # Note
 ## SOLID principle
+### Single Responsibility principle
+### Open-closed principle
+### Liskov Substitution principle
+### Interface Segregation principle
+### Dependency Inversion principle
 
 ## Facade pattern
 
