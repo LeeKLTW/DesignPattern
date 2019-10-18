@@ -46,6 +46,8 @@ python -m unittest -v tests/test_structural.py
 
 --------
 # Note
+## SOLID principle
+
 ## Facade pattern
 
 dictionary.cambridge
