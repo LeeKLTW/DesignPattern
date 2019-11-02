@@ -94,4 +94,4 @@ The django-fsm package is a third-party package that can be used to simplify the
 --------
 # reference
 
-https://github.com/LeeKLTW/python-patterns
+https://github.com/faif/python-patterns
