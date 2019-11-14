@@ -1,6 +1,6 @@
 # encoding: utf-8
 import unittest
-from decorator import add,add_,sub,sub_
+from design_pattern.decorator import add,add_,sub,sub_
 
 class StructureTestCase(unittest.TestCase):
     def test_add(self):

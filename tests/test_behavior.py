@@ -1,7 +1,7 @@
 import unittest
-from iterator import CapitalIterator
-from observer import Inventory,ConsoleObserver
-from observer2 import Publisher,BinaryObserver,HexObserver
+from design_pattern.iterator import CapitalIterator
+from design_pattern.observer import Inventory,ConsoleObserver
+from design_pattern.observer2 import Publisher,BinaryObserver,HexObserver
 
 class IteratorCase(unittest.TestCase):
     def test_iterator(self):
