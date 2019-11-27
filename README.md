@@ -47,10 +47,20 @@ python -m unittest -v tests/test_structural.py
 --------
 # Note
 ## SOLID principle
+
 ### Single Responsibility principle
+
 ### Open-closed principle
+
+Software entities (class, modules, functions, etc.) should be open for extension, but closed for modification.
+``
+When a single change to a program results in a cascade of changes to dependent modules, the design smells of Rigidity. The OCP advises us to refactor the system so that further changes of that kind will not cause more modifications. If the OCP is applied well, then **further changes of that kind are achieved by adding new code, not by changing old code that already works**.
+``
+
 ### Liskov Substitution principle
+
 ### Interface Segregation principle
+
 ### Dependency Inversion principle
 
 ## Facade pattern
