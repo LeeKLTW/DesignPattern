@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
 """
-Sharing similarities with the adapter pattern, the bridge pattern is different from it,
-in the sense that it is used up-front to define an abstraction and its implementation in a decoupled way so that both can vary independently.
+Sharing similarities with the adapter pattern,
+the bridge pattern is different from it,
+in the sense that it is used up-front to define an abstraction and
+its implementation in a decoupled way so that both can vary independently.
 """
 
 
