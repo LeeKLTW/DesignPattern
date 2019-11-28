@@ -68,6 +68,8 @@ When a single change to a program results in a cascade of changes to dependent m
 ## pattern details
 
 ### Builder
+#### Summary
+TLDR Decouples the creation of a complex object and its representation.
 - A builder is a seperate component for building an object
 - Can either give builder an initializer or return it via a static function
 - To make builder **fluent**, `return self`
@@ -75,6 +77,8 @@ When a single change to a program results in a cascade of changes to dependent m
 tandem via a base case 
 
 
+
+####
 ### Facade pattern
 
 dictionary.cambridge
