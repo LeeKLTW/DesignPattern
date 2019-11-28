@@ -1,6 +1,9 @@
+# DesignPattern
+
 (Creational, structural or behavioral)
 
-# Creational patterns
+## schedule & overview
+### Creational patterns
 - [ ] Factory* pattern
 - [x] Abstract Factory pattern
 - [x] Builder pattern
@@ -9,7 +12,7 @@
 - [x] Singleton pattern
 
 
-# Structural patterns
+### Structural patterns
 - [ ] [Adapter pattern](#adapter-pattern)
 - [x] Decorator pattern
 - [x] Bridge pattern
@@ -18,7 +21,7 @@
 - [ ] Composite pattern
 
 
-# Behavior patterns
+### Behavior patterns
 - [x] Iterator  pattern, Generator  pattern
 - [ ] The chain of Responsibility pattern
 - [x] Command   pattern
@@ -28,42 +31,43 @@
 - [x] Strategy  pattern
 
 
-# Other
-
 --------
-# testing
-## doctest
+## testing
+### doctest
 ```
 python -m doctest -v decorator.py
 python -m doctest -v generator.py
 ```
 
-## unittest
+### unittest
 ```
 python -m unittest -v tests/test_structural.py
 
 ```
 
 --------
-# Note
-## SOLID principle
+## Note
+### SOLID principle
 
-### Single Responsibility principle
+#### Single Responsibility principle
 
-### Open-closed principle
+#### Open-closed principle
 
 Software entities (class, modules, functions, etc.) should be open for extension, but closed for modification.
 ``
 When a single change to a program results in a cascade of changes to dependent modules, the design smells of Rigidity. The OCP advises us to refactor the system so that further changes of that kind will not cause more modifications. If the OCP is applied well, then **further changes of that kind are achieved by adding new code, not by changing old code that already works**.
 ``
 
-### Liskov Substitution principle
+#### Liskov Substitution principle
 
-### Interface Segregation principle
+#### Interface Segregation principle
 
-### Dependency Inversion principle
+#### Dependency Inversion principle
 
-## Facade pattern
+
+## pattern details
+
+### Facade pattern
 
 dictionary.cambridge
 > the front of a building, especially a large or attractive building
@@ -74,18 +78,21 @@ Façade is also useful if you have more than one layer in your system. You can i
 
 [requests](https://2.python-requests.org/en/master/)
 
-## Flyweight pattern
+
+### Flyweight pattern
 
 The flyweight pattern ensures that objects that share a state can use the same memory for that shared state. 
 But bear in mind that premature optimization is the most effective way to create a program that is too complicated to maintain.
 It is normally implemented only after a program has demonstrated memory problems
 
 
-## Adapter pattern
+### Adapter pattern
+
 Adapters are used to allow two preexisting objects to work together, even if their interfaces are not compatible.
 Adapter pattern is similar to a simplified decorator pattern. Decorators typically provide the same interface that they replace, whereas adapters map between two different interfaces.
 
-## Observer pattern
+
+### Observer pattern
 when we want to inform/update one or more objects (observers/subscribers) about a change that happened on a given object (subject/publisher/observable)
 
 e.g.
@@ -94,7 +101,7 @@ e.g.
 
 MVC is an architecture and Observer Pattern is an design pattern. They look similar because MVC uses the observer pattern.
 
-## State pattern
+### State pattern
 A state machine is an abstract machine that has two key components, that is, states and transitions.
 
 A nice feature of state machines is that they can be represented as graphs (called state diagrams)
