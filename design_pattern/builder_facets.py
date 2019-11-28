@@ -13,27 +13,24 @@ class Person:
     self.annual_income = None
 
   def __str__(self) -> str:
-    return f"Address: {self.street_address}, {self.postcode}, {self.city}\n" +\
-      f"Employed at {self.company_name} as a {self.position} earning {self.annual_income}\n"
+    return f"Address: {self.street_address}, {self.postcode}, {self.city}\n" + \
+           f"Employed at {self.company_name} as a {self.position} earning {self.annual_income}\n"
 
 
-class PersonBuilder: # facede
+class PersonBuilder:  # facede
   def __init__(self, person=None):
     if person is None:
       self.person = Person()
     else:
       self.person = person
 
-
   @property
   def lives(self):
     return PersonAddressBuilder(self.person)
 
-
   @property
   def works(self):
     return PersonJobBuilder(self.person)
-
 
   def build(self):
     return self.person
@@ -43,16 +40,13 @@ class PersonJobBuilder(PersonBuilder):
   def __init__(self, person):
     super().__init__(person)
 
-
-  def at(self,company_name):
+  def at(self, company_name):
     self.person.company_name = company_name
     return self
 
-
-  def as_a(self,position):
+  def as_a(self, position):
     self.person.position = position
     return self
-
 
   def earning(self, annual_income):
     self.person.annual_income = annual_income
@@ -60,35 +54,33 @@ class PersonJobBuilder(PersonBuilder):
 
 
 class PersonAddressBuilder(PersonBuilder):
-  def __init__(self,person):
+  def __init__(self, person):
     super().__init__(person)
-
 
   def at(self, street_address):
     self.person.street_address = street_address
     return self
 
-
-  def with_postcode(self,postcode):
+  def with_postcode(self, postcode):
     self.person.postcode = postcode
     return self
 
-
-  def in_city(self,city):
+  def in_city(self, city):
     self.person.city = city
     return self
 
+
 if __name__ == '__main__':
   person_builder = PersonBuilder()
-  person = person_builder\
-    .lives\
-      .at('123 London Road')\
-      .in_city('London')\
-      .with_postcode('SW12BC')\
-    .works\
-      .at('Fabrikam')\
-      .as_a('Engineer')\
-      .earning(123000)\
+  person = person_builder \
+    .lives \
+    .at('123 London Road') \
+    .in_city('London') \
+    .with_postcode('SW12BC') \
+    .works \
+    .at('Fabrikam') \
+    .as_a('Engineer') \
+    .earning(123000) \
     .build()
 
   print(person)
