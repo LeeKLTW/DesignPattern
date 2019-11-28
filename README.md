@@ -76,6 +76,14 @@ TLDR Decouples the creation of a complex object and its representation.
 - Different facets of an object can be built with different builders working 
 tandem via a base case 
 
+### Factory
+#### Summary
+TLDR Creates objects without having to specify the exact class.
+- When to use factory? 
+    Cannot overload with same sets of arguments with different names. Or init turn into 'optional parameter of hell'
+    
+#### Example
+Two third-party Django packages, `django-widgy`, and `django-query-builder`, use it for generating HTML pages and dynamic SQL queries
 
 
 ####
