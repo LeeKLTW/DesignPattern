@@ -67,6 +67,14 @@ When a single change to a program results in a cascade of changes to dependent m
 
 ## pattern details
 
+### Builder
+- A builder is a seperate component for building an object
+- Can either give builder an initializer or return it via a static function
+- To make builder **fluent**, `return self`
+- Different facets of an object can be built with different builders working 
+tandem via a base case 
+
+
 ### Facade pattern
 
 dictionary.cambridge
