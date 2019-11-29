@@ -85,8 +85,8 @@ TLDR Creates objects without having to specify the exact class.
 #### Example
 Two third-party Django packages, `django-widgy`, and `django-query-builder`, use it for generating HTML pages and dynamic SQL queries
 
+### Prototype
 
-####
 ### Facade pattern
 
 dictionary.cambridge
