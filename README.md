@@ -90,6 +90,11 @@ Two third-party Django packages, `django-widgy`, and `django-query-builder`, use
 - We make a copy of complicated objects and customize it.(Require copy.deepcopy)
 - To make it more convenient, use it with factory.
 
+#### Summary
+- To implement a prototype, partially construct an object and store it somewhere
+- Deep copy
+- Customize
+- A factory provides a convenient API for using prototype
 
 ### Facade pattern
 
