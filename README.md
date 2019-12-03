@@ -64,7 +64,7 @@ When a single change to a program results in a cascade of changes to dependent m
 
 #### Dependency Inversion principle
 
-
+--------
 ## pattern details
 
 ### Builder
@@ -133,6 +133,7 @@ A nice feature of state machines is that they can be represented as graphs (call
 The django-fsm package is a third-party package that can be used to simplify the implementation and usage of state machines in the Django Framework.
 
 --------
-# reference
+## reference
 
 https://github.com/faif/python-patterns
+Mastering Python Design Patterns, By Kamon Ayeva, Sakis Kasampalis, August 2018
