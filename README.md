@@ -86,6 +86,10 @@ TLDR Creates objects without having to specify the exact class.
 Two third-party Django packages, `django-widgy`, and `django-query-builder`, use it for generating HTML pages and dynamic SQL queries
 
 ### Prototype
+#### Motivation
+- We make a copy of complicated objects and customize it.(Require copy.deepcopy)
+- To make it more convenient, use it with factory.
+
 
 ### Facade pattern
 
