@@ -96,6 +96,11 @@ Two third-party Django packages, `django-widgy`, and `django-query-builder`, use
 - Customize
 - A factory provides a convenient API for using prototype
 
+### Singleton
+#### Motivation
+A component which is instantiated only once.
+
+
 ### Facade pattern
 
 dictionary.cambridge
