@@ -100,6 +100,12 @@ Two third-party Django packages, `django-widgy`, and `django-query-builder`, use
 #### Motivation
 A component which is instantiated only once.
 
+### Adapter
+#### Motivation
+A construct which adapts an existing interface X to 
+conform the required interface Y.
+
+
 
 ### Facade pattern
 
