@@ -23,3 +23,18 @@ class Rectangle(list):
     self.append(Line(Point(x, y, Point(x, y + height))))
     self.append(Line(Point(x, y + height), Point(x + width, y + height)))
 
+class LineToPointAdapter(list):
+  count = 0
+
+  def __init__(self, line):
+    self.count +=1
+    print(f'{self.count}: Generating points for line.'
+          f'[{line.start.x}, {line.start.y}]→'
+          f'[{line.end.x}, {line.end.y}]')
+
+    # todo: continue line adapter
+
+
+
+
+
