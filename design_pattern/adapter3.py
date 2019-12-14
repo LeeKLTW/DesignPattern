@@ -22,7 +22,7 @@ class Rectangle(list):
     super().__init__()
     self.append(Line(Point(x, y), Point(x + width, y)))
     self.append(Line(Point(x + width, y), Point(x + width, y + height)))
-    self.append(Line(Point(x, y, Point(x, y + height))))
+    self.append(Line(Point(x, y), Point(x, y + height)))
     self.append(Line(Point(x, y + height), Point(x + width, y + height)))
 
 
@@ -39,8 +39,27 @@ class LineToPointAdapter(list):
     top = max(line.start.y, line.end.y)
     bottom = max(line.start.y, line.end.y)
 
+    if right - left == 0:
+      for y in range(top,bottom):
+        self.append(Point(left, y))
+    elif line.end.y - line.start.y == 0:
+      for x in range(left, right):
+        self.append(Point(x, top))
 
 
+def draw(rcs):
+  print("\n\n--- Drawing something ---\n")
+  for rc in rcs:
+    for line in rc:
+      adapter = LineToPointAdapter(line)
+      for p in adapter:
+        draw_point(p)
 
 
+if __name__ == '__main__':
+    rs = [
+      Rectangle(1,1,10,10),
+      Rectangle(3,3,6,6)
+    ]
 
+    draw(rs)
