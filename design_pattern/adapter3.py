@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+# API you are given:
 class Point:
   def __init__(self, x, y):
     self.x = x
@@ -9,6 +10,7 @@ def draw_point(p):
   print('.', end='')
 
 
+# Code you already have:
 class Line:
   def __init__(self, start, end):
     self.start = start
@@ -23,6 +25,7 @@ class Rectangle(list):
     self.append(Line(Point(x, y, Point(x, y + height))))
     self.append(Line(Point(x, y + height), Point(x + width, y + height)))
 
+
 class LineToPointAdapter(list):
   count = 0
 
@@ -31,8 +34,11 @@ class LineToPointAdapter(list):
     print(f'{self.count}: Generating points for line.'
           f'[{line.start.x}, {line.start.y}]→'
           f'[{line.end.x}, {line.end.y}]')
+    left = min(line.start.x, line.end.x)
+    right = max(line.start.x, line.end.x)
+    top = max(line.start.y, line.end.y)
+    bottom = max(line.start.y, line.end.y)
 
-    # todo: continue line adapter
 
 
 
