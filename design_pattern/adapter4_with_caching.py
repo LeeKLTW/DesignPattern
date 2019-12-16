@@ -7,3 +7,8 @@ class Point:
 
 def draw_point(p):
   print('.', end='')
+
+
+class Line:
+  def __init__(self):
+    pass
