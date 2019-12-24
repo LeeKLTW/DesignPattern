@@ -105,7 +105,9 @@ A component which is instantiated only once.
 A construct which adapts an existing interface X to 
 conform the required interface Y.
 
-
+### Bridge
+#### Motivation
+Bridge prevents a 'Cartesian product' complexity explosion.
 
 ### Facade pattern
 
