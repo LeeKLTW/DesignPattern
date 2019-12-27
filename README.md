@@ -108,6 +108,7 @@ conform the required interface Y.
 ### Bridge
 #### Motivation
 Bridge prevents a 'Cartesian product' complexity explosion.
+A mechanism that decouples an interface(hierarchy) from an implementation(hierarchy).
 
 ### Facade pattern
 
