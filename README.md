@@ -3,6 +3,33 @@
 (Creational, structural or behavioral)
 
 ## schedule & overview
+
+Dependency inversion principle[10]
+
+### SOLID principle
+
+#### Single Responsibility principle
+A class should only have a single responsibility, that is, only changes to one 
+part of the software's specification should be able to affect the specification 
+of the class.
+
+#### Open-closed principle
+Software entities (class, modules, functions, etc.) should be open for 
+extension, but closed for modification.
+``
+When a single change to a program results in a cascade of changes to dependent modules, the design smells of Rigidity. The OCP advises us to refactor the system so that further changes of that kind will not cause more modifications. If the OCP is applied well, then **further changes of that kind are achieved by adding new code, not by changing old code that already works**.
+``
+#### Liskov Substitution principle
+"Objects in a program should be replaceable with instances of their subtypes 
+without altering the correctness of that program." See also design by contract.
+
+#### Interface Segregation principle
+"Many client-specific interfaces are better than one general-purpose interface."
+
+#### Dependency Inversion principle
+One should "depend upon abstractions, [not] concretions."
+
+
 ### Creational patterns
 - [ ] Factory* pattern
 - [x] Abstract Factory pattern
@@ -46,23 +73,6 @@ python -m unittest -v tests/test_structural.py
 ```
 
 --------
-## Note
-### SOLID principle
-
-#### Single Responsibility principle
-
-#### Open-closed principle
-
-Software entities (class, modules, functions, etc.) should be open for extension, but closed for modification.
-``
-When a single change to a program results in a cascade of changes to dependent modules, the design smells of Rigidity. The OCP advises us to refactor the system so that further changes of that kind will not cause more modifications. If the OCP is applied well, then **further changes of that kind are achieved by adding new code, not by changing old code that already works**.
-``
-
-#### Liskov Substitution principle
-
-#### Interface Segregation principle
-
-#### Dependency Inversion principle
 
 --------
 ## pattern details
