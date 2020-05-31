@@ -1,5 +1,5 @@
 # DesignPattern
-
+###### tags: `degsign_pattern` 
 (Creational, structural or behavioral)
 
 ## schedule & overview
@@ -7,7 +7,6 @@
 Dependency inversion principle[10]
 
 ### SOLID principle
-
 #### Single Responsibility principle
 A class should only have a single responsibility, that is, only changes to one 
 part of the software's specification should be able to affect the specification 
