@@ -34,26 +34,55 @@ One should "depend upon abstractions, [not] concretions."
 - Overview
     - **Creational patterns**
         - [x] Abstract Factory pattern
+        - [ ] [Borg pattern](#Borg)
         - [x] [Builder pattern](#Builder-pattern)
         - [ ] [Factory* pattern](#)
         - [ ] [Lazy Evaluation](#Lazy-Evaluation)
+        - [ ] [Pool pattern](#Pool)
         - [x] [Prototype pattern](#Prototype)
         - [x] [Singleton pattern](#Singleton)
+        
     - **Structural patterns**
+        - [ ] [3-ties pattern](#3-tier)
         - [x] [Adapter pattern](#Adapter)
-        - [x] [Bridge pattern](#Bridge)
+        - [ ] [Bridge pattern](#Bridge)
         - [ ] [Composite pattern](#)
         - [x] [Decorator pattern](#)
         - [x] [Facade    pattern](#Facade)
         - [ ] [Flyweight pattern](#Flyweight)
+        - [ ] [Front controller](#Front-controller)
+        - [ ] [mvc](#mvc)
+        - [ ] [proxy](#proxy)
+        
     - **Behavior patterns**
+        - [ ] [Chain of Responsibility pattern](#Chain-of-Responsibility)
+        - [ ] [Catalog   pattern](#Catalog)
+        - [ ] [Chaining method](#Chaining-method)
         - [x] [Command   pattern](#)
         - [ ] [Iterator  pattern, Generator  pattern](#Iterator-Generator)
+        - [ ] [Mediator  pattern](#Mediator)
+        - [ ] [Memento pattern](#Memento)
         - [x] [Observer  pattern](#Observer)
+        - [ ] [Publish Subscibe pattern](#Publish-Subscibe)
+        - [ ] [Registry pattern](#Registry)
+        - [ ] [Specification pattern](#Specification)
         - [ ] [State     pattern](#State)
         - [x] [Strategy  pattern](#Strategy)
         - [x] [Template  pattern](#Template)
-        - [ ] [The chain of Responsibility pattern](#Chain-of-Responsibility)
+        - [ ] [Visitor pattern](#Visitor)
+    
+    - Design for Testability Patterns
+        - [ ] dependency_injection 3 variants of dependency injection
+    
+    - Fundamental Patterns
+        - [ ] delegation_pattern    an object handles a request by delegating to a second object (the delegate)
+    
+    - Others:
+
+        - [ ] Blackboard    architectural model, assemble different sub-system knowledge to build a solution, AI approach - non gang of four pattern
+        - [ ] Graph_search  graphing algorithms - non gang of four pattern
+        - [ ] hsm   hierarchical state machine - non gang of four pattern
+
 
 - Detail
 ### Creational patterns
@@ -116,7 +145,11 @@ One should "depend upon abstractions, [not] concretions."
 ##### Example
 
 #### Bridge
+[References](http://en.wikibooks.org/wiki/Computer_Science_Design_Patterns/Bridge_Pattern#Python)
 ##### Summary & TLDR
+Decouples an abstraction from its implementation.
+A client-provider middleman to soften interface changes
+
 ##### Motivation & when to use it 
     Bridge prevents a 'Cartesian product' complexity explosion.
     A mechanism that decouples an interface(hierarchy) from an implementation(hierarchy).
