@@ -14,7 +14,7 @@ class RasterRender(Renderer):
     print(f"Drawing pixels for circle of radius {radius}")
 
 
-class Shape: # client-provider middleman
+class Shape:
   def __init__(self, renderer):
     self.renderer = renderer
   def draw(self):pass
