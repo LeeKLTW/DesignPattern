@@ -1,16 +1,33 @@
 # -*- coding: utf-8 -*-
-class Renderer():
+from abc import ABC
+
+class Renderer(ABC): # client-provider middleman
   def render_circle(self, radius):
     pass
 
 class VectorRenderer(Renderer):
-  pass
+  def render_circle(self, radius):
+    print(f"Drawing a circle of radius {radius}")
 
 class RasterRender(Renderer):
-  pass
+  def render_circle(self, radius):
+    print(f"Drawing pixels for circle of radius {radius}")
 
-class Shape:
-  pass
+
+class Shape: # client-provider middleman
+  def __init__(self, renderer):
+    self.renderer = renderer
+  def draw(self):pass
+  def resize(self, factor):pass
+
 
 class Circle(Shape):
-  pass
+  def __init__(self, renderer, radius):
+    super().__init__(renderer)
+    self.radius = radius
+
+  def draw(self):
+    self.renderer.render_circle(self.radius)
+
+  def resize(self, factor):
+    self.radius *= factor
