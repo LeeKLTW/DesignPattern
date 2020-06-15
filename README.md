@@ -32,32 +32,28 @@ One should "depend upon abstractions, [not] concretions."
 ## pattern
 
 - Overview
-### Creational patterns
-- [x] Abstract Factory pattern
-- [x] [Builder pattern](#Builder-pattern)
-- [ ] Factory* pattern
-- [ ] Lazy Evaluation
-- [ ] Prototype pattern
-- [x] Singleton pattern
-
-
-### Structural patterns
-- [ ] [Adapter pattern](#adapter-pattern)
-- [x] Bridge pattern
-- [ ] Composite pattern
-- [x] Decorator pattern
-- [x] [Facade    pattern](#facade-pattern)
-- [ ] [Flyweight pattern](#flyweight-pattern)
-
-
-### Behavior patterns
-- [x] Command   pattern
-- [x] Iterator  pattern, Generator  pattern
-- [x] [Observer  pattern](#observer-pattern)
-- [ ] [State     pattern](#state-pattern)
-- [x] Strategy  pattern
-- [x] Template  pattern
-- [ ] The chain of Responsibility pattern
+    - **Creational patterns**
+        - [x] Abstract Factory pattern
+        - [x] [Builder pattern](#Builder-pattern)
+        - [ ] Factory* pattern
+        - [ ] Lazy Evaluation
+        - [ ] Prototype pattern
+        - [x] Singleton pattern
+    - **Structural patterns**
+        - [ ] [Adapter pattern](#adapter-pattern)
+        - [x] Bridge pattern
+        - [ ] Composite pattern
+        - [x] Decorator pattern
+        - [x] [Facade    pattern](#facade-pattern)
+        - [ ] [Flyweight pattern](#flyweight-pattern)
+    - **Behavior patterns**
+        - [x] Command   pattern
+        - [x] Iterator  pattern, Generator  pattern
+        - [x] [Observer  pattern](#observer-pattern)
+        - [ ] [State     pattern](#state-pattern)
+        - [x] Strategy  pattern
+        - [x] Template  pattern
+        - [ ] The chain of Responsibility pattern
 
 - Detail
 ### Creational patterns
@@ -70,98 +66,101 @@ TLDR Decouples the creation of a complex object and its representation.
 - To make builder **fluent**, `return self`
 - Different facets of an object can be built with different builders working 
 tandem via a base case 
-#### Motivation & when to use it 
-#### Example
+##### Motivation & when to use it 
+##### Example
 
-### Factory
-#### Summary
+#### Factory
+##### Summary & TLDR
 TLDR Creates objects without having to specify the exact class.
 
-#### Motivation & when to use it 
-Cannot overload with same sets of arguments with different names. Or init turn into 'optional parameter of hell'
+##### Motivation & when to use it 
+Cannot overload with same sets of arguments with different names. 
+Or init turn into 'optional parameter of hell'
     
-#### Example
-Two third-party Django packages, `django-widgy`, and `django-query-builder`, use it for generating HTML pages and dynamic SQL queries
+##### Example
+Two third-party Django packages, `django-widgy`, 
+and `django-query-builder`, 
+use it for generating HTML pages and dynamic SQL queries
 
-### Prototype
-#### Summary & TLDR
+#### Prototype
+##### Summary & TLDR
 - To implement a prototype, partially construct an object and store it somewhere
 - Deep copy
 - Customize
 - A factory provides a convenient API for using prototype
-#### Motivation & when to use it 
+##### Motivation & when to use it 
 - We make a copy of complicated objects and customize it.(Require copy.deepcopy)
 - To make it more convenient, use it with factory.
-#### Example
+##### Example
 
 
-### Singleton
-#### Summary & TLDR
-#### Motivation & when to use it 
+#### Singleton
+##### Summary & TLDR
+##### Motivation & when to use it 
 A component which is instantiated only once.
-#### Example
+##### Example
 
-### Adapter
-#### Summary & TLDR
-#### Motivation & when to use it 
+#### Adapter
+##### Summary & TLDR
+##### Motivation & when to use it 
 A construct which adapts an existing interface X to 
 conform the required interface Y.
-#### Example
+##### Example
 
 
-### Bridge
-#### Summary & TLDR
-#### Motivation & when to use it 
+#### Bridge
+##### Summary & TLDR
+##### Motivation & when to use it 
 Bridge prevents a 'Cartesian product' complexity explosion.
 A mechanism that decouples an interface(hierarchy) from an implementation(hierarchy).
-#### Example
+##### Example
 
 
-### Facade pattern
+#### Facade pattern
 
 dictionary.cambridge
 > the front of a building, especially a large or attractive building
 
-#### Summary & TLDR
+##### Summary & TLDR
 providing a single, simple entry point to a complex system
 
-#### Motivation & when to use it 
+##### Motivation & when to use it 
 Façade is also useful if you have more than one layer in your system. 
 You can introduce one façade entry point per layer, and let all layers 
 communicate with each other through their façades. 
 That promotes loose coupling and keeps the layers as independent as possible.
-#### Example
+##### Example
 [requests](https://2.python-requests.org/en/master/)
 
 
-### Flyweight pattern
+#### Flyweight pattern
 The flyweight pattern ensures that objects that share a state can use the same 
 memory for that shared state. But bear in mind that premature optimization is 
 the most effective way to create a program that is too complicated to maintain.
 It is normally implemented only after a program has demonstrated memory problems.
-#### Summary & TLDR
-#### Motivation & when to use it 
-#### Example
+##### Summary & TLDR
+##### Motivation & when to use it 
+##### Example
 
 
 
-### Adapter pattern
+#### Adapter pattern
 
 Adapters are used to allow two preexisting objects to work together, even if their interfaces are not compatible.
 Adapter pattern is similar to a simplified decorator pattern. Decorators typically provide the same interface that they replace, whereas adapters map between two different interfaces.
-#### Summary & TLDR
-#### Motivation & when to use it 
-#### Example
+##### Summary & TLDR
+##### Motivation & when to use it 
+##### Example
 
 
-### Observer pattern
+#### Observer pattern
 MVC is an architecture and Observer Pattern is an design pattern. They look similar because MVC uses the observer pattern.
 
-#### Summary & TLDR
-#### Motivation & when to use it 
+##### Summary & TLDR
+##### Motivation & when to use it 
 when we want to inform/update one or more objects (observers/subscribers) about a change that happened on a given object (subject/publisher/observable)
 
-#### Example
+##### Example
 1. Kivy, the Python Framework for developing user interfaces, 
 has a module called Properties, which implements the Observer pattern.
 2. The [RabbitMQ](https://www.rabbitmq.com/tutorials/tutorial-three-python.html)
@@ -171,14 +170,14 @@ RabbitMQ can be used in a Python application to implement a
 publish-subscribe pattern.
 
 
-### State pattern
+#### State pattern
 A state machine is an abstract machine that has two key components, that is, 
 states and transitions.A nice feature of state machines is that they can be 
 represented as graphs (called state diagrams)
 
-#### Summary & TLDR
-#### Motivation & when to use it 
-#### Example
+##### Summary & TLDR
+##### Motivation & when to use it 
+##### Example
 The django-fsm package is a third-party package that can be used to simplify the implementation and usage of state machines in the Django Framework.
 
 
