@@ -45,7 +45,7 @@ One should "depend upon abstractions, [not] concretions."
     - **Structural patterns**
         - [ ] [3-ties pattern](#3-tier)
         - [x] [Adapter pattern](#Adapter)
-        - [ ] [Bridge pattern](#Bridge)
+        - [x] [Bridge pattern](#Bridge)
         - [ ] [Composite pattern](#)
         - [x] [Decorator pattern](#)
         - [x] [Facade    pattern](#Facade)
