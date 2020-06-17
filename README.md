@@ -161,9 +161,18 @@ A client-provider middleman to soften interface changes
 ##### Example
 
 #### Decorator
+The Decorator pattern is used to dynamically add a new feature to an
+object without changing its implementation. It differs from
+inheritance because the new feature is added only to that particular
+object, not to the entire subclass.
+[sourcemaking](https://sourcemaking.com/design_patterns/decorator)
+
 ##### Summary & TLDR
+Adds behaviour to object without affecting its class.
 ##### Motivation & when to use it 
+the new feature is added only to that particular object, not to the entire subclass
 ##### Example
+flask
 
 #### Facade
     dictionary.cambridge
