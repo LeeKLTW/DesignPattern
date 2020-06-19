@@ -37,7 +37,7 @@ One should "depend upon abstractions, [not] concretions."
         - [ ] [Borg pattern](#Borg)
         - [x] [Builder pattern](#Builder-pattern)
         - [ ] [Factory* pattern](#)
-        - [ ] [Lazy Evaluation](#Lazy-Evaluation)
+        - [x] [Lazy Evaluation](#Lazy-Evaluation)
         - [ ] [Pool pattern](#Pool)
         - [x] [Prototype pattern](#Prototype)
         - [x] [Singleton pattern](#Singleton)

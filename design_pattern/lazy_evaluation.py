@@ -13,7 +13,7 @@ class lazy_property:
         obj.__dict__[self.function.__name__] = val
 
 def lazy_property2(fn):
-    attr = '_lazy_'+ fn.__name__
+    attr = '_lazy_' + fn.__name__
 
     @property
     def _lazy_property(self):
