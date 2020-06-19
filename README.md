@@ -88,6 +88,7 @@ One should "depend upon abstractions, [not] concretions."
 ### Creational patterns
 
 #### Builder pattern
+
 ##### Summary & TLDR
     TLDR Decouples the creation of a complex object and its representation.
     - A builder is a separate component for building an object
@@ -96,6 +97,19 @@ One should "depend upon abstractions, [not] concretions."
     - Different facets of an object can be built with different builders working 
     tandem via a base case 
 ##### Motivation & when to use it 
+- Benefits
+    - Construction process can be controlled by the director.
+    - Useful when many operations have to be done to build an object.
+    - Avoid Telescoping Constructor Pattern.
+- Drawbacks
+    - Not suitable is a mutable object is required.
+- When to use
+    - To avoid dealing with inconsistent object when the object needs to be 
+    created over several steps.
+    - To avoid too many constructor arguments.
+    - To construct an object that should be immutable.
+    - To encapsulate the complete creation logic.
+
 ##### Example
 
 #### Factory
