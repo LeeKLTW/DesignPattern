@@ -25,3 +25,16 @@ class GraphicObjedt:
     def __str__(self):
         items = []
         self._print(items, 0)
+
+
+class Circle(GraphicObjedt):
+    @property
+    def name(self):
+        return 'Circle'
+
+
+class Square(GraphicObjedt):
+    @property
+    def name(self):
+        return 'Square'
+
