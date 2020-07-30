@@ -25,6 +25,7 @@ class GraphicObjedt:
     def __str__(self):
         items = []
         self._print(items, 0)
+        return ''.join(items)
 
 
 class Circle(GraphicObjedt):
