@@ -39,3 +39,10 @@ class Square(GraphicObjedt):
     def name(self):
         return 'Square'
 
+
+if __name__ == "__main__":
+    drawing = GraphicObjedt()
+    drawing.name = "My Drawing"
+    drawing.children.append(Square('Red'))
+    drawing.children.append(Square('Yellow'))
+    print(drawing)
