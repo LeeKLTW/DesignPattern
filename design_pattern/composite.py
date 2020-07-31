@@ -46,3 +46,10 @@ if __name__ == "__main__":
     drawing.children.append(Square('Red'))
     drawing.children.append(Square('Yellow'))
     print(drawing)
+
+    group = GraphicObjedt()
+    group.children.append(Circle('Blue'))
+    group.children.append(Square('Blue'))
+    drawing.children.append(group)
+
+    print(drawing)
