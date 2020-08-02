@@ -46,7 +46,7 @@ One should "depend upon abstractions, [not] concretions."
         - [ ] [3-ties pattern](#3-tier)
         - [x] [Adapter pattern](#Adapter)
         - [x] [Bridge pattern](#Bridge)
-        - [ ] [Composite pattern](#)
+        - [x] [Composite pattern](#Composite)
         - [x] [Decorator pattern](#)
         - [x] [Facade    pattern](#Facade)
         - [ ] [Flyweight pattern](#Flyweight)
@@ -177,8 +177,24 @@ A client-provider middleman to soften interface changes
 ##### Example
 
 #### Composite
+[References:wikibooks](http://en.wikibooks.org/wiki/Computer_Science_Design_Patterns/Bridge_Pattern#Python)
+[References:infinitescript](https://infinitescript.com/2014/10/the-23-gang-of-three-design-patterns/)
+
 ##### Summary & TLDR
-##### Motivation & when to use it 
+Describes a group of objects that is treated as a single instance.
+
+##### Motivation & when to use it
+Consider for example a program that manipulates a file system. 
+A file system is a tree structure that contains Branches which are Folders as 
+well as Leaf nodes which are Files. Note that a folder object usually contains 
+one or more file or folder objects and thus is a complex object where a file is 
+a simple object. Note also that since files and folders have many operations and
+ attributes in common, such as moving and copying a file or a folder, 
+ listing file or folder attributes such as file name and size, it would be 
+ easier and more convenient to treat both file and folder objects uniformly 
+ by defining a File System Resource Interface.
+
+![](img/Design-Pattern-Relationships.jpg)
 ##### Example
 
 #### Decorator
