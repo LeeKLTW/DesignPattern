@@ -36,4 +36,23 @@ class NeuronLayer(list, Connectable):
     def __str__(self):
         return f"{self.name} with {len(self)} neurons"
 
-# TODO: example
+if __name__ == "__main__":
+    neuron1 = Neuron("n1")
+    neuron2 = Neuron("n2")
+
+    layer1 = NeuronLayer("L1", 3)
+    layer2 = NeuronLayer("L2", 4)
+
+    neuron1.connect_to(neuron2)
+    neuron1.connect_to(layer1)
+    layer1.connect_to(neuron2)
+    layer1.connect_to(layer2)
+
+    print(neuron1)
+    print(neuron2)
+    print(layer1)
+    print(layer2)
+    # n1, 0 inputs, 4 outputs
+    # n2, 4 inputs, 0 outputs
+    # L1 with 3 neurons
+    # L2 with 4 neurons
