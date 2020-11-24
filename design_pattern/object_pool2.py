@@ -5,10 +5,12 @@ class ReusablePool:
     def __init__(self, size):
         self._reusables = [Reusable() for _ in range(size)]
 
+    # TODO: implement instantiates new objects as they are empty
     def acquire(self):
         print("get a reusable from pool")
         return self._reusables.pop()
 
+    # TODO: implement a facility to clean up unused
     def release(self, reusable):
         print("give a reusable to pool")
         self._reusables.append(reusable)
