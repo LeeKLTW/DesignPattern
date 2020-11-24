@@ -109,8 +109,40 @@ One should "depend upon abstractions, [not] concretions."
     - To avoid too many constructor arguments.
     - To construct an object that should be immutable.
     - To encapsulate the complete creation logic.
+##### Example
+
+---
+
+#### Object Pool
+##### What is this pattern
+- `Pool`: A pool store(cache) some instance. 
+A pool allows check out an inactive object and then return it.
+A pool create one instance to provide without wait, if none are available the pool.
+- `Object Pool pattern`: preinstantiate and maintain a group of reusable instances of 
+the same type in the pool.
+
+##### When to use this pattern
+- pros:
+    - Offer a significant performance boost
+- cons: pass
+- when to use:
+    the cost of initializing a class instance is high, 
+    the rate of instantiation of a class is high, 
+    and the number of instantiations in use at any one time is low.
+- pitful:
+     we don't want a process to have to wait for a particular object to be 
+     released, so the Object Pool also instantiates new objects as they are 
+     required, but must also implement a facility to clean up unused 
+     objects periodically
+
+##### Rules of thumb
+- The Factory Method pattern can be used to encapsulate the creation logic for 
+  objects.The object pool pattern keeps track of the objects it creates.
+- Object Pools are usually implemented as Singletons.
 
 ##### Example
+
+---
 
 #### Factory
 ##### Summary & TLDR
